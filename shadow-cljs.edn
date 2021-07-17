@@ -1,0 +1,16 @@
+{:source-paths ["src"]
+
+ :dependencies [[re-frame "1.2.0"]
+                [reagent "1.1.0"]
+                [re-frisk "1.3.5"]]
+
+ :nrepl {:port 8777}
+
+ :builds {:web {:target     :browser
+                :output-dir "build/web/js"
+                :asset-path "/js"
+                :modules    {:main {:init-fn etiquetas.web.app/main}}
+                :devtools   {:http-root  "build/web"
+                             :http-port  5000
+                             :preloads   [re-frisk.preload]
+                             :after-load etiquetas.web.app/reload}}}}
